@@ -39,7 +39,8 @@ function deepestChild() {
     // filter on it.
     
     nextNode = queue.shift();
-    console.log(`nextNode found = ${nextNode}`)
+    console.log(`nextNode found = ${nextNode.node}`)
+    
     // Now let’s start iterating through the nodes. We are 
     // starting at i = 0, iterating until we hit 
     // i < nextNode.node.children.length. We want to take 
@@ -73,8 +74,8 @@ function deepestChild() {
         depthVar = results[idy].depth;
       }
     }
-    console.log(`deepestchild found = ${depthVar[0]}`)
-    return depthVar[0];
+    console.log(`deepestchild found = ${depthVar[0].node}`)
+    return depthVar[0].node;
     
   }
 
