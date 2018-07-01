@@ -52,11 +52,11 @@ function deepestChild() {
     // node. We are going to repeat these steps until there are no 
     // more nodes to iterate through. 
  
-    if (nextNode.node.querySelectorAll().length > 0) {
+    if (nextNode.node.childNodes.length > 0) {
 
-      for (var i = 0; i < nextNode.node.querySelectorAll().length; i ++) {
+      for (var i = 0; i < nextNode.node.childNodes.length; i ++) {
         queue.push({ "depth": nextNode.depth+1,
-          "node" : nextNode.node.querySelectorAll()[i]
+          "node" : nextNode.node.childNodes[i]
         });
       }
     }
