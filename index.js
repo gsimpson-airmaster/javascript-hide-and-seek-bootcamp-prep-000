@@ -56,6 +56,7 @@ function deepestChild() {
     if (nextNode.node.childNodes.length > 0) {
 
       for (var i = 0; i < nextNode.node.childNodes.length; i ++) {
+        if(nextNode.node.childNodes[i] typeof HtmlElement)
         queue.push({ "depth": nextNode.depth+1,
           "node" : nextNode.node.childNodes[i]
         });
