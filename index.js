@@ -73,7 +73,7 @@ function deepestChild() {
         depthVar = results[idy].depth;
       }
     }
-    
+    console.log(`deepestchild found = ${depthVar[0]}`)
     return depthVar[0];
     
   }
