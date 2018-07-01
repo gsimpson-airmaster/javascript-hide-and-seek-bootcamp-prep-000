@@ -76,8 +76,8 @@ function deepestChild() {
         depthVar = results[idy].depth;
       }
     }
-    console.log(`deepestchild found = ${depthVar[0].node}`)
-    return depthVar[0].node;
+    console.log(`deepestchild found = ${deepest.node} at level ${depthVar[0]}`)
+    return deepest[0].node;
     
   }
 
