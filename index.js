@@ -63,8 +63,16 @@ function deepestChild() {
         }
       }
     }
+    
+    //append the node we just interogated to the results array
+    
       results.push(nextNode);
     }
+    
+    // Now lets filter the results and find the deepest HTML elements
+    // within our results array. We will add the deepest results into 
+    // an array so we can decide later if we wnat to return just the first
+    // element or the entire array.
     
     for(var idy = 0; idy<results.length;idy++) {
       if(results[idy].depth === depthVar) {
@@ -76,6 +84,9 @@ function deepestChild() {
         depthVar = results[idy].depth;
       }
     }
+    
+    // Return just the first element of the deepest array.
+    
     console.log(`deepestchild found = ${deepest.node} at level ${depthVar[0]}`)
     return deepest[0].node;
     
