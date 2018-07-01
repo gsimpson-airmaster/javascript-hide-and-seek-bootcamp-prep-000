@@ -17,6 +17,8 @@ function deepestChild() {
   var queue = [];
   var results = [];
   var nextNode;
+  var deepest = [];
+  var depthVar = 0;
   
   // The first thing we want to do is push the root value 
   // into the queue. We are going to add the entire node, 
@@ -26,7 +28,7 @@ function deepestChild() {
   
   queue.push(
     { "depth": 0,
-      "node" : document.querySelector('#app')
+      "node" : document.querySelector('#grand-node')
     });
     
     while (queue.length > 0) {
@@ -50,7 +52,7 @@ function deepestChild() {
     // node. We are going to repeat these steps until there are no 
     // more nodes to iterate through. 
  
-    if (nextNode.node.children.length > 0) {
+    if (nextNode.node.querySelectorAll().length > 0) {
 
       for (var i = 0; i < nextNode.node.querySelectorAll().length; i ++) {
         queue.push({ "depth": nextNode.depth+1,
@@ -58,20 +60,23 @@ function deepestChild() {
         });
       }
     }
-    
-    // Before we update to the next nextNode, we are going to 
-    // perform the callback function on it! If it passes as true, 
-    // we are going to push that node into the results array. 
-
-    if (filter(nextNode.node.value, nextNode.depth)) {
       results.push(nextNode.node.value);
     }
+    
+    for(var idy = 0; idy<results.length;idy++) {
+      if(results[idy].depth === depthVar) {
+        deepest.push(results[idy]);
+      }
+      else if(results[idy].depth > depthVar) {
+        deepest = [];
+        deepest.push(results[idy]);
+        depthVar = results[idy].depth;
+      }
+    }
+    
+    return depthVar[0];
+    
   }
 
-  // Finally, we return the complete results array! 
-  return results;
-    
-    
-    
-}
+ 
 
