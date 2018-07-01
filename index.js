@@ -14,6 +14,10 @@ function increaseRankBy(n) {
 }
 
 function deepestChild() {
+  var queue = [];
+  var results = [];
+  var nextNode;
+  
   
 }
 
