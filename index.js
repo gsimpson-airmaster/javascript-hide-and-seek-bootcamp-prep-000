@@ -29,7 +29,47 @@ function deepestChild() {
       "node" : document.querySelector('#app')
     });
     
+    while (queue.length > 0) {
+
+    // Let's declare nextNode as the first node in the 
+    // queue. We use the shift method to remove it from 
+    // the queue since we will be performing the callback 
+    // filter on it.
     
+    nextNode = queue.shift();
+ 
+    // Now let’s start iterating through the nodes. We are 
+    // starting at i = 0, iterating until we hit 
+    // i < nextNode.node.children.length. We want to take 
+    // the length property of the children array inside the 
+    // nextNode. While we iterate through each of those children, 
+    // we are going to push it into the queue. Each node pushed 
+    // into the queue will have their depth value declared. By 
+    // setting the depth property equal to nextNode.depth + 1, 
+    // we are saying add one more level to the level of it’s parent 
+    // node. We are going to repeat these steps until there are no 
+    // more nodes to iterate through. 
+ 
+    if (nextNode.node.children.length > 0) {
+
+      for (var i = 0; i < nextNode.node.children.length; i ++) {
+        queue.push({ "depth": nextNode.depth+1,
+          "node" : nextNode.node.children[i]
+        });
+      }
+    }
+    
+    // Before we update to the next nextNode, we are going to 
+    // perform the callback function on it! If it passes as true, 
+    // we are going to push that node into the results array. 
+
+    if (filter(nextNode.node.value, nextNode.depth)) {
+      results.push(nextNode.node.value);
+    }
+  }
+
+  // Finally, we return the complete results array! 
+  return results;
     
     
     
