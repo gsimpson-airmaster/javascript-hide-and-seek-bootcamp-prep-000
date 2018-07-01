@@ -60,7 +60,7 @@ function deepestChild() {
         });
       }
     }
-      results.push(nextNode.node.value);
+      results.push(nextNode);
     }
     
     for(var idy = 0; idy<results.length;idy++) {
