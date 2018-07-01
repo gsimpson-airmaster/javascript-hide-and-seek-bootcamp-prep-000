@@ -39,7 +39,7 @@ function deepestChild() {
     // filter on it.
     
     nextNode = queue.shift();
-    console.log(`nextNode found = ${nextNode.node}`)
+    console.log(`nextNode found = ${nextNode.node.innerHtml}`)
     
     // Now let’s start iterating through the nodes. We are 
     // starting at i = 0, iterating until we hit 
