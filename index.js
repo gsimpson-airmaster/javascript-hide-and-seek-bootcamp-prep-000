@@ -58,7 +58,7 @@ function deepestChild() {
       for (var i = 0; i < nextNode.node.childNodes.length; i ++) {
         if(nextNode.node.childNodes[i] instanceof HTMLElement) {
           queue.push({ "depth": nextNode.depth+1,
-            "node" : nextNode.node.childNodes[i].item
+            "node" : nextNode.node.childNodes[i].item[0]
           });
         }
       }
