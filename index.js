@@ -20,7 +20,10 @@ function deepestChild() {
   
   queue.push(
     { "depth": 0,
-      "node" : document.querySelector()
+      "node" : document.querySelector('#app')
     });
+    
+    
+    
 }
 
