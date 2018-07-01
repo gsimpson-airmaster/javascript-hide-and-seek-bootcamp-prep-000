@@ -18,6 +18,9 @@ function deepestChild() {
   var results = [];
   var nextNode;
   
-  
+  queue.push(
+    { "depth": 0,
+      "node" : document.querySelector()
+    });
 }
 
