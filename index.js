@@ -52,7 +52,7 @@ function deepestChild() {
  
     if (nextNode.node.children.length > 0) {
 
-      for (var i = 0; i < nextNode.node.children.length; i ++) {
+      for (var i = 0; i < nextNode.node.querySelectorAll().length; i ++) {
         queue.push({ "depth": nextNode.depth+1,
           "node" : nextNode.node.children[i]
         });
