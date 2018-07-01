@@ -54,7 +54,7 @@ function deepestChild() {
 
       for (var i = 0; i < nextNode.node.querySelectorAll().length; i ++) {
         queue.push({ "depth": nextNode.depth+1,
-          "node" : nextNode.node.children[i]
+          "node" : nextNode.node.querySelectorAll()[i]
         });
       }
     }
