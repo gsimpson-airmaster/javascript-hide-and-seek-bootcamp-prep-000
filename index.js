@@ -17,12 +17,9 @@ function nestedTarget() {
 // }
 
 function increaseRankBy(n) {
-  var ranksParent = document.querySelectorAll('.ranked-list');
-  for(var i = 0; i < ranksParent.length; i++) {
-//    var ranks = ranksParent.querySelectorAll('li');
-    for(var idx = 0; idx < ranks.length;idx++) {
+  var ranks = document.querySelectorAll('.ranked-list li');
+  for(var i = 0; i < ranks.length; i++) {
       ranks[i].textContent = (parseInt(ranks[i].textContent) + parseInt(n));
-    }
   }
 }
 
